@@ -1,0 +1,42 @@
+Nowadays, many user-centric services are delivered through smart systems and internet-connected devices. It is crucial to model these pervasive systems within the healthcare sector, given the extensive and sensitive nature of information managed by E-health systems. This includes individual details like medical history, diagnostic reports, treatment plans, etc. E-health systems often employ sensors and monitors to effortlessly collect patient data, with continuous monitoring and extracting insights; while all of this makes the user interaction with the hospital system easier, it still fails to empower individuals privacy.
+%Cloud systems are integrated into E-health systems to off-load services onto the cloud to increase scalability and performance. 
+%Usually, these cloud partners are third-party services hidden from users' sight when using patients' personal data. Hence, 
+We model an E-health system using CCAL, which mainly involves user's personal data flow within the systems by current consent among various entities.  Let %. Where 
+$ \textit{Doctor}$, $ \textit{Nurse}$, $ \textit{Patient}$ and $ \textit{Lab}$ be the various system components. 
+The workflow of the E-health scenario is as follows: 
+    1) User Alice is registered in the system and can manage consent at any stage in processing.
+    2) Alice provides her blood samples to a lab to generate some results.
+    3) Lab collects the sample data, performs computation, saves reports in the storage system, and sends a copy of them to the Nurse.
+    4) Nurse collects the lab reports, performs analysis, and sends them to the Doctor.
+    5) Doctor retrieves patient details from the storage, receives an analysis report from the Nurse, and performs further diagnosis.\\
+For this concrete scenario, we assume global date clock $ G_d$ in the current configuration is dated 31st March 2023 and $ \cons_h $ and $ \db_h$ as the global consent and database given as follows, \\
+%
+$\begin{array}{lcl}
+ \textstyle  \cons_h &  \triangleq & (alice \rightarrow  \{   use \rightarrow \langle (doctor, trt) , (nurse, trt)\rangle  ,\\
+ & &  collect \rightarrow \langle\{ (doctor, trt) , (nurse, trt)\rangle \} , \\
+ & & store \rightarrow \langle\{ (doctor, trt) , (nurse, trt)\rangle \}  , \\ 
+ & & trans \rightarrow \langle\{ (doctor, trt) , (nurse, trt)\rangle \} ,  \\
+ & & \text{1st April 2023} )  \\
+ \db_{h} &  \triangleq & (alice \rightarrow  \{ Id_{t1}, address_{t2}\} , bob \rightarrow \{ reports_{t3} \})  
+\end{array}$
+Here user Alice consent allows entities $ \textit{doctor}$ , $ \textit{nurse}$ to $ \textit{use}$, $ \textit{collect}$ data for purpose of $ \textit{trt}$. The database currently stores data values $ \textit{Id}$, $ \textit{Address}$ along with their private tags.
+We model the system based on the specifications as follows,
+$\begin{array}{lcl}
+\textit{System } & \triangleq &  (G_d , \langle \cons_h, \db _h\rangle ) \triangleright  Doc\, | \, Nur \, | \,  Patient \, | \, Lab \\
+\textit{Patient  } & \triangleq & alice \ [\![  a \leftarrow addCon(\rho_1).  a \leftarrow addRet(r) \\
+&  &   b^{lab}!(sample \ \textbf{tag} \ {\{alice\}, \{trt,lab\}}) ]\!] \\
+\text{Lab }&  \triangleq &  l  [\![  b?(x \ \textbf{tag} \ t ). \\
+& &  c^{nur}!(rep \ \textbf{tag} \ {\{alice\}, \{trt,lab\}}) ]\!] \\
+ \text{Nur } & \triangleq  & nur [\![  c?(y \ \textbf{tag} \ u ).  k \leftarrow store (y  \ \textbf{tag} \ u)\\
+ & & d^{doc}!(analysis \ \textbf{tag} \  ({\{alice\}, \{trt,lab\}})) ]\!]  \\
+ \text{Doc  } & \triangleq  & doc [\![  d?(z). k \leftarrow getdata((\{ alice\}, \{trt\})).  \\
+ & &  k?(x) .  k \leftarrow delete(y  \ \textbf{tag} \ u) ]\!] \\
+\end{array}$
+Here doctor, nurse, and lab are entities in the system and the patient is the user. Patient alice updated her consent by sending her policy $ \rho_1$ and retention $r$ via channel $ a $. Here the user interaction rules $ \scriptsize \text{[L-ADDPOL]}$ and $ \scriptsize \text{ [L-ADDRET]}$ are applied respectively updating the global consent and sends her tagged personal data $ \text{sample}$ to the lab via channel $ b$. Lab $ l$ gets a sample $x \ \textbf{tag} \ t $ from a patient on channel $ b$, lab has both use and collect rights for trt purpose in the consent and retention checks holds hence rule $ \scriptsize \text{[L-Inp]}$, applies, after local computation process sends lab reports $rep \ \textbf{tag} \ {(\{alice\}, \{trt,lab\})}$ to nurse via channel $ c$ and respective actions, use and transfer and retention validity checks are done by $ \scriptsize \text{[L-out]} $. 
+Nurse receives data from the lab via channel $ c$, privacy checks are done by rule $ \scriptsize \text{[L-out]} $, nurse stores the data to database via  rule $ \scriptsize \text{[L-STOREDATA]} $performs analysis and sends the analysis to the entity doctor via channel $ d$. Here again the respective rules checks for valid privacy requirements. The doctor receives an analysis from the Nurse and retrieves other data of the user from the database applying rule $ \scriptsize \text{[L-GETDATA]}$  however, when doctor tries to delete the data in database via database channel $k$ action use and delete are checked against the consent via rule $ \scriptsize \text{ [L-DELDATA]}$, and fails to apply the rule stopping the consent violation. With such a modeling example can help understand and reason about consent needed from the users to perform or analyse the data and provide services accordingly. The example also showcases when the data belongs to multiple users, how the rule checks for the consent from each  user. 
+
+
+
+
+%Upon removal of consent, any attempts to access the personal data will fail in the rule application and the process enters an error state. 
+%Here framework allows a patient to be an integral part of her personal data processing and any access to personal data is handled as per the available consent.

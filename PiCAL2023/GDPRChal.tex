@@ -1,0 +1,18 @@
+In this section, we discuss the main technical challenges in implementing the requirements discussed in Sec.~\ref{sec:GDPRintro}.
+In particular, we focus on the challenges with the potential to be addressed via language design principles.
+In contrast to well-explored problems for incorporating GDPR rules within a distributed system, the challenges discussed in this section are less explored by the research community~\cite{kutylowski_gdpr_2020}. 
+
+\paragraph{\textbf{Challenge 1: Contextual awareness of consent }} \label{chal1}
+As we know, consent is one of the lawful bases for the GDPR, but managing consent within its contextual framework presents a complex challenge. Consent typically aligns with specific purposes, services, and entities, which can shift over time. Factors such as an organization's adoption of new data handling methods, changes in the intended purpose, or users modifying their consent status, including withdrawals, consent expiration after the retention period, new business partners, and service collaborators can all alter the contextual landscape of consent. Existing systems lack such integration in their system design and development, thus failing to keep track of internal and external contextual changes in consent over time. 
+
+\paragraph{\textbf{Challenge 2: Data processed as personal data.}}\label{chal2}
+This can happen when non-personal data can be associated with an identifier or when such data is combined with other pieces of data to be associated with an individual. For example, entity $E_1$ can handle non-personal data $D$, which in the process of data handling is transformed into identifiable personal data $D'$. However, $E_1$ does not have authorization from the data owner to process such personal data (data leak), creating a violation of the users' consent preference. 
+
+\paragraph{\textbf{Challenge 3: Personal data with multiple owners.}}\label{chal3}
+Although the GDPR doesn't explicitly address processing data owned by multiple subjects, it's crucial to consider data handling in such scenarios. As an example, let us consider a loan application of combined personal data $D$ of two data subjects, Alice and Bob. If Alice allows the handling of her personal data for a set of purposes $ P_1$ and Bob allows the handling of his personal data for a set of purposes $P_2$, it is unclear how to proceed with the handling of $D$.  
+
+\paragraph{\textbf{Challenge 4: Unclear terminology for personal data handing}} \label{chal4}
+As discussed in Sec.~\ref{sec:GDPRintro}, GDPR terminology, concerning data handling (e.g., collect, store, use, delete, transfer), lacks specific definitions. It is unclear how services should directly enforce requirements associated with such terms.
+
+\paragraph{\textbf{Challenge 5: Ambiguity in data deletion and degree of compliance}} GDPR mandates that no personal data can be stored indefinitely within the system, but it does not specify when the controller should delete the data, i.e.,  within seconds, hours, days, or even months. For a company like Google, which collects user data at scale upon deletion request, it takes up to 6 months to delete data from all its subsystems. 
+The notion of deletion is unclear and indirectly affects the degree of compliance achieved. If the system weak-compliant or strong-compliant is affected by the efficiency of deletion.  Additionally, most storage systems or databases do not consider consent or metadata such as purposes, access, and entities during deletion it follows key-value storage, but these GDPR-related metadata helps efficiently delete personal data based on consent retraction or expired retention. 

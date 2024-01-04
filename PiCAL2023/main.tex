@@ -1,0 +1,141 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{enumerate}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+\usepackage{float} 
+\usepackage{tikz-cd}
+\usepackage{adjustbox}
+\usepackage{mathpartir}
+\usepackage{color, colortbl}
+\usepackage{tabularx}
+\newcommand{\manyset}[1]{\widehat{#1}}
+\newcommand{\many}[1]{\overline{#1}} 
+\newcommand{\pritag}{\langle \manyset{ \mathit{u}},\manyset{p}\rangle}
+\newcommand{\usr}{\mathit{Users}}
+\newcommand{\at}{\mathit{Act}}
+\newcommand{\act}{\mathcal{A}}
+%\newcommand{\ret}{\mathcal{R}}
+\newcommand{\purp}{\mathit{Purp}}
+\newcommand{\cons}{\mathcal{C}}
+\newcommand{\db}{\mathcal{D}}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+    %% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+%% complete the rights form.
+
+\newcommand{\cp}[1]{\textcolor{red}{\textbf{CP:} #1}}
+\newcommand{\rn}[1]{\mbox{\textsc{#1}}}
+
+\newcommand{\ncondrule}[3]{ 
+\scriptsize\begin{array}{c} 
+     \textsc{ ({#1})} \\[1pt] 
+    #2 \\[1pt] 
+    \hline\\[-7pt]
+    #3 
+  \end{array} }
+
+\newcommand{\nrule}[2]{ 
+  \begin{array}{c} 
+    \textsc{ ({#1})} \\ 
+    #2  
+  \end{array}}
+  
+  \newcommand{\toL}[1] {\xrightarrow{{#1}}}
+
+\newcommand{\rrule}[2]{ 
+  \begin{array}{c} 
+    %\textsc{ (\blue{#1})} \\[1pt] 
+    #1 \\[1pt] 
+    \hline\\[-7pt]
+    #2 \\[1pt] 
+  \end{array} }
+  
+\begin{document}
+
+\title{ A Process Calculus Integrating Data Protection by Design and Default \\
+}
+
+\author{\IEEEauthorblockN{%1\textsuperscript{st}
+Chinmayi Prabhu Baramashetru}
+\IEEEauthorblockA{\textit{Department of Informatics} \\
+\textit{University of Oslo, Oslo, Norway}\\
+cpbarama@ifi.uio.no}
+\and
+\IEEEauthorblockN{%2\textsuperscript{nd} 
+S.\ Lizeth Tapia Tarifa}
+\IEEEauthorblockA{\textit{Department of Informatics} \\
+\textit{University of Oslo, Oslo, Norway}\\
+%City, Country \\
+sltarifa@ifi.uio.no}
+\and
+\IEEEauthorblockN{%3\textsuperscript{rd} 
+Olaf Owe}
+\IEEEauthorblockA{\textit{Department of Informatics} \\
+\textit{University of Oslo, Oslo, Norway}\\
+%City, Country \\
+olaf@ifi.uio.no}
+}
+
+\maketitle
+
+\begin{abstract}
+The European General Data Protection Regulation (GDPR) focuses on giving more control to personal data owners. It imposes several restrictions on organizations to obtain valid consent from users for processing their personal data. In this paper, we propose a formal consent framework satisfying core GDPR provisions and try to solve the ambiguity around GDPR compliance. We use a variant of Pi-calculus to model privacy-aware systems incorporating conditions of consent, storage limitation, and purpose-based processing. We provide operational semantics that respect user consent through the data processing life cycle. The theory is explained with an example, and we also present a prototypic implementation in Maude, yielding an environment for program simulation to verify consent specifications within the programs.
+\end{abstract}
+
+\begin{IEEEkeywords}
+component, formatting, style, styling, insert
+\end{IEEEkeywords}
+
+\section{Introduction}
+\label{sec:intro}
+\input{intro}
+\vspace{-2mm}
+\section{GDPR Requirements}
+\label{sec:GDPRintro}
+\input{GDPRintro}
+\vspace{-1mm}
+\section{GDPR Challenges and Solutions}
+\label{sec:gdprchal}
+\input{GDPRChal}
+\section{Design Principles of the Calculus }
+\label{sec:langsyntax}
+\input{Languagesyntax}
+\vspace{-5mm}
+\subsection{Reflection on semantics by example: E-Health System}
+\label{sec:casestudy}
+\input{casestudy}
+\vspace{-3mm}
+\section{Implementation}
+\label{sec:implem}
+\input{Implementation}
+
+\section{Related Work }
+\label{sec:related}
+\input{relatedwork}
+\section{Conclusion }
+\label{sec:conclusion}
+\input{conclusion}
+
+\bibliographystyle{abbrv}
+ \bibliography{refs} 
+
+\end{document}

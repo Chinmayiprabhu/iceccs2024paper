@@ -1,0 +1,128 @@
+\begin{thebibliography}{10}
+
+\bibitem{abadi2017applied}
+M.~Abadi, B.~Blanchet, and C.~Fournet.
+\newblock The applied pi calculus: Mobile values, new names, and secure
+  communication.
+\newblock {\em Journal of the ACM (JACM)}, 65(1):1--41, 2017.
+
+\bibitem{BaramashetruTOG22}
+C.~P. Baramashetru, S.~L. {Tapia Tarifa}, O.~Owe, and N.~Gruschka.
+\newblock A policy language to capture compliance of data protection
+  requirements.
+\newblock In {\em Integrated Formal Methods, {IFM} 2022, Proceedings}, volume
+  13274 of {\em Lecture Notes in Computer Science}, pages 289--309. Springer,
+  2022.
+
+\bibitem{byun_purpose_2005}
+J.-W. Byun, E.~Bertino, and N.~Li.
+\newblock Purpose based access control of complex data for privacy protection.
+\newblock In {\em Proceedings of the tenth {ACM} symposium on {Access} control
+  models and technologies}, pages 102--110. ACM, 2005.
+
+\bibitem{CavoukianC09}
+A.~Cavoukian and M.~Chibba.
+\newblock Advancing privacy and security in computing, networking and systems
+  innovations through privacy by design.
+\newblock In {\em Proceedings of the 2009 conference of the Centre for Advanced
+  Studies on Collaborative Research}, pages 358--360. {ACM}, 2009.
+
+\bibitem{hennessy02toplas}
+M.~Hennessy and J.~Riely.
+\newblock Information flow vs. resource access in the asynchronous pi-calculus.
+\newblock {\em ACM Transactions on Programming Languages and Systems},
+  24(5):566--591, 2002.
+
+\bibitem{BehaviouralTypes2016}
+H.~H\"{u}ttel, I.~Lanese, V.~T. Vasconcelos, L.~Caires, M.~Carbone, P.-M.
+  Deni\'{e}lou, D.~Mostrous, L.~Padovani, A.~Ravara, E.~Tuosto, H.~T. Vieira,
+  and G.~Zavattaro.
+\newblock Foundations of session types and behavioural contracts.
+\newblock {\em {ACM} Comput. Surv.}, 49(1), 2016.
+
+\bibitem{KaramiBJ22}
+F.~Karami, D.~A. Basin, and E.~B. Johnsen.
+\newblock {DPL:} {A} language for {GDPR} enforcement.
+\newblock In {\em 35th {IEEE} Computer Security Foundations Symposium, {CSF}
+  2022}, pages 112--129. {IEEE}, 2022.
+
+\bibitem{kutylowski_gdpr_2020}
+M.~Kuty{\l}owski, A.~Lauks-Dutka, and M.~Yung.
+\newblock {GDPR} -- {Challenges} for {Reconciling} {Legal} {Rules} with
+  {Technical} {Reality}.
+\newblock In {\em Computer {Security} -- {ESORICS} 2020}, Lecture {Notes} in
+  {Computer} {Science}, pages 736--755. Springer, 2020.
+
+\bibitem{masoumzadeh_purbac_2008}
+A.~Masoumzadeh and J.~B.~D. Joshi.
+\newblock {PuRBAC}: {Purpose}-{Aware} {Role}-{Based} {Access} {Control}.
+\newblock In {\em On the {Move} to {Meaningful} {Internet} {Systems}: {OTM}
+  2008}, Lecture {Notes} in {Computer} {Science}, pages 1104--1121. Springer,
+  2008.
+
+\bibitem{myers_protecting_2000}
+A.~C. Myers and B.~Liskov.
+\newblock Protecting privacy using the decentralized label model.
+\newblock {\em ACM Transactions on Software Engineering and Methodology},
+  9(4):410--442, 2000.
+
+\bibitem{EUA2014}
+E.~Network and I.~S. Agency.
+\newblock {\em Privacy and data protection by design: from policy to
+  engineering.}
+\newblock Publications Office, 2014.
+
+\bibitem{piras_defend_2019}
+L.~Piras et~al.
+\newblock {DEFeND} {Architecture}: {A} {Privacy} by {Design} {Platform} for
+  {GDPR} {Compliance}.
+\newblock In {\em Trust, {Privacy} and {Security} in {Digital} {Business}},
+  Lecture {Notes} in {Computer} {Science}, pages 78--93. Springer, 2019.
+
+\bibitem{ranise_automated_2017}
+S.~Ranise and H.~Siswantoro.
+\newblock Automated {Legal} {Compliance} {Checking} by {Security} {Policy}
+  {Analysis}.
+\newblock In {\em Computer {Safety}, {Reliability}, and {Security}}, Lecture
+  {Notes} in {Computer} {Science}, pages 361--372. Springer, 2017.
+
+\bibitem{schneider_is_2018}
+G.~Schneider.
+\newblock Is {Privacy} by {Construction} {Possible}?
+\newblock In {\em Leveraging {Applications} of {Formal} {Methods},
+  {Verification} and {Validation}. {Modeling}}, Lecture {Notes} in {Computer}
+  {Science}, pages 471--485. Springer, 2018.
+
+\bibitem{sen_bootstrapping_2014}
+S.~Sen, S.~Guha, A.~Datta, S.~K. Rajamani, J.~Tsai, and J.~M. Wing.
+\newblock Bootstrapping {Privacy} {Compliance} in {Big} {Data} {Systems}.
+\newblock In {\em 2014 {IEEE} {Symposium} on {Security} and {Privacy}}, pages
+  327--342. IEEE, 2014.
+
+\bibitem{TokasO20}
+S.~Tokas and O.~Owe.
+\newblock A formal framework for consent management.
+\newblock In {\em Formal Techniques for Distributed Objects, Components, and
+  Systems - {FORTE} 2020}, volume 12136 of {\em Lecture Notes in Computer
+  Science}, pages 169--186. Spinger, 2020.
+
+\bibitem{TokasOR22}
+S.~Tokas, O.~Owe, and T.~Ramezanifarkhani.
+\newblock Static checking of {GDPR}-related privacy compliance for
+  object-oriented distributed systems.
+\newblock {\em J. Log. Algebraic Methods Program.}, 125:100733, 2022.
+
+\bibitem{utz__2019}
+C.~Utz, M.~Degeling, S.~Fahl, F.~Schaub, and T.~Holz.
+\newblock ({Un}) informed consent: {Studying} {GDPR} consent notices in the
+  field.
+\newblock In {\em Proceedings of the 2019 {ACM } {SIGAC} conference on computer
+  and communications security}, pages 973--990. {ACM}, 2019.
+
+\bibitem{yang_purpose-based_2007}
+N.~Yang, H.~Barringer, and N.~Zhang.
+\newblock A {Purpose}-{Based} {Access} {Control} {Model}.
+\newblock In {\em Third {International} {Symposium} on {Information}
+  {Assurance} and {Security}}, pages 143--148, 2007.
+
+\end{thebibliography}
